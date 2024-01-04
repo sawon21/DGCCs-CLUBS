@@ -1,9 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
-     
+     <!-- Add this line to include Font Awesome in your head -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
      <style>
-     
+     /* Add these styles to your existing CSS */
+.form-outer form .page .field input[type="file"] {
+  display: none;
+}
+
+.form-outer form .page .field .custom-upload {
+  position: relative;
+  display: inline-block;
+}
+
+.form-outer form .page .field .custom-upload .upload-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: #d43f8d;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.form-outer form .page .field .custom-upload .upload-btn i {
+  margin-right: 5px;
+}
+
+.form-outer form .page .field .custom-upload .upload-btn:hover {
+  background: #000;
+}
+
+.form-outer form .page .field input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+     /* Add this style to your existing CSS */
+     /* Add this style to your existing CSS */
+.container .form-outer form .page .field .custom-upload .upload-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: #d43f8d;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.container .form-outer form .page .field .custom-upload .upload-btn i {
+  margin-right: 5px;
+}
+
+.container .form-outer form .page .field .custom-upload .upload-btn:hover {
+  background: #000;
+}
+
+
+     b{
+       color: red;
+     }
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
   margin: 0;
@@ -17,7 +78,7 @@ body{
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
-  background: url("bg.png"), -webkit-linear-gradient(bottom, #0250c5, #d43f8d);
+  background: linear-gradient(90deg, rgba(83,144,217,1) 13%, rgba(2,219,219,1) 54%, rgba(0,255,183,1) 86%);
 }
 ::selection{
   color: #fff;
@@ -82,7 +143,7 @@ form .page .field button{
   width: 100%;
   height: calc(100% + 5px);
   border: none;
-  background: #d33f8d;
+  background: #03045E;
   margin-top: -20px;
   border-radius: 5px;
   color: #fff;
@@ -94,7 +155,7 @@ form .page .field button{
   transition: 0.5s ease;
 }
 form .page .field button:hover{
-  background: #000;
+  background: #00B4D8;
 }
 form .page .btns button{
   margin-top: -20px!important;
@@ -187,12 +248,11 @@ form .page .btns button.next{
   display: block;
   color: #fff;
 }       
-}       
+} 
      </style>
     
      
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Membership Form </title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       
@@ -203,7 +263,7 @@ form .page .btns button.next{
          <div class="progress-bar">
             <div class="step">
                <p>
-                  Name
+                  Basic
                </p>
                <div class="bullet">
                   <span>1</span>
@@ -221,7 +281,7 @@ form .page .btns button.next{
             </div>
             <div class="step">
                <p>
-                  Birth
+                  Upload
                </p>
                <div class="bullet">
                   <span>3</span>
@@ -230,7 +290,7 @@ form .page .btns button.next{
             </div>
             <div class="step">
                <p>
-                  Submit
+                  College 
                </p>
                <div class="bullet">
                   <span>4</span>
@@ -239,22 +299,40 @@ form .page .btns button.next{
             </div>
          </div>
          <div class="form-outer">
-            <form action="#">
+            <form action="https://formspree.io/f/xpzvzyor" enctype="multipart/form-data">
                <div class="page slide-page">
                   <div class="title">
                      Basic Info:
                   </div>
                   <div class="field">
                      <div class="label">
-                        First Name
+                        Full Name : <b>*</b>
                      </div>
                      <input type="text" name="first_name" required>
                   </div>
-                  <div class="field">
+                                   <div class="field">
                      <div class="label">
-                        Last Name
+Gender <b>*</b>
                      </div>
-                     <input type="text" name="last_name" required>
+                     <select name="gender" required>
+                                              <option value="">Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                     </select>
+                  </div>
+                                    <div class="field">
+                     <div class="label">
+                        Religion  <b>*</b>
+                     </div>
+                     <select name="gender" required>
+                       <option value="">Select</option>
+                        <option name="islam" value="islam">Islam</option>
+                        <option name="Hinduism" value="Hinduism">Hinduism</option>
+              <option name="Christianity" value="Christianity">Christianity</option>
+                                      <option name="buddhism" value="buddhism">Buddhism</option>
+                        <option name="other" value="other">Other</option>
+                     </select>
                   </div>
                   <div class="field">
                      <button class="firstNext next">Next</button>
@@ -264,15 +342,21 @@ form .page .btns button.next{
                   <div class="title">
                      Contact Info:
                   </div>
-                  <div class="field">
+                                    <div class="field">
                      <div class="label">
-                        Email Address
+                         Address : <b>*</b>
                      </div>
-                     <input type="email" name="email" required>
+                     <input type="text" name="address" required>
                   </div>
                   <div class="field">
                      <div class="label">
-                        Phone Number
+                        Email Address :
+                     </div>
+                     <input type="email" name="email" >
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Phone Number : <b>*</b>
                      </div>
                      <input type="number" name="phone" required>
                   </div>
@@ -283,24 +367,42 @@ form .page .btns button.next{
                </div>
                <div class="page">
                   <div class="title">
-                     Date of Birth:
+                     Upload:
                   </div>
+    <div class="field">
+  <div class="label">
+    Photo <b>*</b>
+  </div>
+  <div class="custom-upload">
+    <label class="upload-btn">
+      <i class="fas fa-cloud-upload-alt"></i> Upload
+      <input type="file" name="profile_picture" accept="image/*" required onchange="displayFileName(this)">
+    </label>
+    <span id="file-name"></span>
+  </div>
+</div>
                   <div class="field">
                      <div class="label">
-                        Date
+                        Date of Birth  <b>*</b>
                      </div>
                      <input type="date" name="date" required>
                   </div>
-                  <div class="field">
+
+ <div class="field">
                      <div class="label">
-                        Gender
-                     </div>
-                     <select name="gender" required>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
-                     </select>
+                        Which club(s) do you want to join? <b>*</b>
+                     </div><select name="clubMemberships[]" multiple required>
+  <option value="ScienceClub">Science Club</option>
+  <option value="DebateClub">Debate Club</option>
+  <option value="EnglishLanguageClub">English Language Club</option>
+  <option value="ProgrammingClub">Programming Club</option>
+  <option value="ChessClub">Chess Club</option>
+  <!-- Add more options as needed -->
+</select>
+
+
                   </div>
+
                   <div class="field btns">
                      <button class="prev-2 prev">Previous</button>
                      <button class="next-2 next">Next</button>
@@ -308,20 +410,34 @@ form .page .btns button.next{
                </div>
                <div class="page">
                   <div class="title">
-                     Login Details:
+                     Student Details:
                   </div>
                   <div class="field">
                      <div class="label">
-                        Username
+                        Roll No : <b>*</b>
                      </div>
-                     <input type="text" name="username" required>
+                     <input type="number" name="roll-no" required>
                   </div>
                   <div class="field">
                      <div class="label">
-                        Password
+                        Department : <b>*</b>
                      </div>
-                     <input type="password" name="password" required>
+                     <input type="text" name="department" required>
                   </div>
+                                     <div class="field">
+                     <div class="label">
+                        Session <b>*</b>
+                     </div>
+                   <select name="Session" required>
+  <option value="">Select</option>
+  <option value="HSC-2023">2021-2022 (HSC-2023)</option>
+  <option value="HSC-2024">2022-2023 (HSC-2024)</option>
+  <option value="HSC-2025">2023-2024 (HSC-2025)</option>
+  <option value="HSC-2026">2024-2025 (HSC-2026)</option>
+  <option value="HSC-2027">2025-2026 (HSC-2027)</option>
+</select>
+
+                  </div>                 
                   <div class="field btns">
                      <button class="prev-3 prev">Previous</button>
                      <button class="submit">Submit</button>
@@ -347,7 +463,7 @@ const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 
 function validateInputs(current) {
-  const inputs = document.querySelectorAll(`.page:nth-child(${current}) input[required]`);
+  const inputs = document.querySelectorAll(`.page:nth-child(${current}) input[required], .page:nth-child(${current}) select[required]`);
   for (const input of inputs) {
     const value = input.value.trim();
     if (value === "") {
@@ -355,6 +471,15 @@ function validateInputs(current) {
       return false;
     } else if (input.type === "email" && !validateEmail(value)) {
       showErrorMessage(input, "Please enter a valid email address.");
+      return false;
+    } else if (input.name === "gender" && value === "Select") {
+      showErrorMessage(input, "Please select a gender.");
+      return false;
+    } else if (input.name === "religion" && value === "Select") {
+      showErrorMessage(input, "Please select a religion.");
+      return false;
+    } else if (input.name === "password" && !validatePassword(value)) {
+      showErrorMessage(input, "Password must be at least 8 characters and include uppercase, lowercase, number, and special character.");
       return false;
     } else {
       hideErrorMessage(input);
@@ -368,10 +493,15 @@ function validateEmail(email) {
   return emailRegex.test(email);
 }
 
+function validatePassword(password) {
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  return passwordRegex.test(password);
+}
+
 function showErrorMessage(input, message) {
-  const errorMessageSpan = input.parentElement.querySelector(".error-message");
+  let errorMessageSpan = input.parentElement.querySelector(".error-message");
   if (!errorMessageSpan) {
-    const errorMessageSpan = document.createElement("span");
+    errorMessageSpan = document.createElement("span");
     errorMessageSpan.className = "error-message";
     errorMessageSpan.textContent = message;
     input.parentElement.appendChild(errorMessageSpan);
@@ -466,5 +596,12 @@ submitBtn.addEventListener("click", function () {
 
 
       </script>
+      <script>
+  function displayFileName(input) {
+    const fileName = input.files[0].name;
+    document.getElementById('file-name').innerText = fileName;
+  }
+</script>
+
    </body>
 </html>
