@@ -5,6 +5,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
      <style>
+     @media only screen and (min-width: 768px) {
+  .desktop-message {
+    display: block;
+  }
+  
+  .mobile-message {
+    display: none;
+  }
+}
      b{
        color: red;
      }
@@ -358,6 +367,9 @@ Gender <b>*</b>
   <option value="Chess Club">Chess Club</option>
   <!-- Add more options as needed -->
 </select>
+<div class="desktop-message" style="color:grey">
+  <i>Please press and hold shift to select multiple clubi</i>
+</div>
 
 
                   </div>
