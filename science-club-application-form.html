@@ -5,27 +5,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
      <style>
-     @media only screen and (max-width: 767px) {
-  .desktop-message {
-    display: none;
-  }
-  
-  .mobile-message {
-    display: block;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-}
-     @media only screen and (min-width: 768px) {
-  .desktop-message {
-    display: block;
-  }
-  
-  .mobile-message {
-    display: none;
-  }
-}
+
      b{
        color: red;
      }
@@ -58,7 +38,11 @@ body{
 .container header{
   font-size: 35px;
   font-weight: 600;
-  margin: 0 0 30px 0;
+  margin: 0 0 10px 0;
+  color: #0096FF;
+}
+.container h1 {
+  color: #E97451;
 }
 .container .form-outer{
   width: 100%;
@@ -227,8 +211,8 @@ form .page .btns button.next{
    </head>
    <body>
       <div class="container">
-         <header>Membership Form</header>
-<h1><mark>◑ Science Club ◑</mark></h1>
+         <header> <pre>͎M͎͎e͎͎m͎͎b͎͎e͎͎r͎͎s͎͎h͎͎i͎͎p͎ ͎F͎͎o͎͎r͎͎m͎ </pre></header>
+<h1>◑ Science Club ◑</h1>
          <div class="progress-bar">
             <div class="step">
                <p>
@@ -270,7 +254,7 @@ form .page .btns button.next{
          <div class="form-outer">
             <form action="https://formspree.io/f/xpzvzyor" method="POST">
                <div class="page slide-page">
-                 <input type="hidden" name="MEMBERSHIP FORM" id="MEMBERSHIP FORM" value="SCIENCE CLUB MEMBERSHIP" />
+                 <input type="hidden" name="Membership Form " id="MEMBERSHIP FORM" value="SCIENCE CLUB MEMBERSHIP" />
                   <div class="title">
         <u>Personal Info:</u>    
                   </div>
@@ -278,7 +262,7 @@ form .page .btns button.next{
                      <div class="label">
                         Full Name : <b>*</b>
                      </div>
-                     <input type="text" name="Full Name " required  style="text-transform:uppercase">
+                     <input type="text" name="Full Name " required>
                   </div>
              <div class="field">
                      <div class="label">
@@ -356,13 +340,13 @@ Gender <b>*</b>
                      <div class="label">
                         Father's Name : <b>*</b>
                      </div>
-                     <input type="text" name="Father's Name " required style="text-transform:uppercase">
+                     <input type="text" name="Father's Name " required>
                   </div>
         <div class="field">
                      <div class="label">
                         Mother's Name : <b>*</b>
                      </div>
-                     <input type="text" name="Mother's Name " required style="text-transform:uppercase">
+                     <input type="text" name="Mother's Name " required>
                   </div>
   <div class="field">
                      <div class="label">Guardian Phone Number : <b>*</b>
